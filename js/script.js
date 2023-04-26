@@ -1,11 +1,17 @@
-let eb = document.getElementById('geo');
+let getLocation = () => {
 
-function getLocation() {
-		navigator.geolocation.getCurrentPosition(showPosition);
-}
+	let out = document.getElementById('geo');
 
-function showPosition(position) {
-	let lng = position.coords.longitude;
-  let lat = position.coords.latitude;
-	eb.innerHTML = String(lat) + String(lng);
+	const succesCallback = (position) => {
+		let lat = position.coords.latitude;
+		let lng = position.coords.longitude;
+		out.innerHTML = "Широта: " + lat + "<br>Долгота: " + lng;
+		console.log(position.coords.latitude, position.coords.longitude);
+	}
+
+	const errorCallback = (error) => {
+		console.error(error);
+	}
+
+	navigator.geolocation.getCurrentPosition(succesCallback, errorCallback);
 }
