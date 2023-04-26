@@ -5,7 +5,7 @@ let getLocation = () => {
 	const succesCallback = (position) => {
 		let lat = position.coords.latitude;
 		let lng = position.coords.longitude;
-		out.innerHTML = "Широта: " + lat + "<br>Долгота: " + lng;
+		out.innerHTML += "Широта: " + lat + "<br>Долгота: " + lng;
 		console.log(position.coords.latitude, position.coords.longitude);
 	}
 
