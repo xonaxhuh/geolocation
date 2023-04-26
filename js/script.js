@@ -1,8 +1,14 @@
+var x = document.getElementById("geo");
+
 function getLocation() {
-		navigator.geolocation.getCurrentPosition(showPosition);
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
 }
 
 function showPosition(position) {
-	let inn = document.getElementById('geo');
-	inn.innerHTML = 'Широта: ' + position.coords.latitude + '<br> Долгота: ' + position.coords.longitude;
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
 }
