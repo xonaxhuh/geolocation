@@ -7,5 +7,5 @@ function getLocation() {
 function showPosition(position) {
 	let lng = position.coords.longitude;
   let lat = position.coords.latitude;
-	eb.innerHTML = 'Широта: ' + String(lat) + '<br> Долгота: ' + String(lng);
+	eb.innerHTML = String(lat) + String(lng);
 }
