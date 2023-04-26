@@ -1,7 +1,7 @@
 let inn = document.getElementById('geo');
 
 function btn() {
-	navigator.geolocation.getCurrentPosition(showPosition);
+	navigator.geolocation.getCurrentPosition(showPosition, errorHandler);
 }
 
 function showPosition(position) {
